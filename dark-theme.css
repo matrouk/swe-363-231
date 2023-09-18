@@ -1,7 +1,20 @@
+@font-face {
+    font-family: myFirstFont;
+    src: url(CairoPlay-VariableFont_slnt\,wght.ttf);
+}
+@font-face {
+    font-family: mySecondFont;
+    src: url(CairoPlay-Regular.ttf);
+}
 html{
-    background-color: black;
-    color: white;
+    font-family: mySecondFont;
+    background-color: #012727;
+    background-image: url("Animated\ Shape.svg");
+    color: #F1DAC4;
 }
 a {
-    color: white;  
+    color: #F1DAC4;  
+}
+header{
+    font-family: myFirstFont;
 }
