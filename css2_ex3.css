@@ -1,0 +1,67 @@
+/* Change all h2 fonts family to sans-serif */
+h2 {
+    font-family: sans-serif;
+}
+
+/* Capitalize all headings of any level in your code */
+h1, h2, h3, h4, h5, h6 {
+    text-transform: capitalize;
+}
+
+/* Change the first paragraph’s letter after any h2 to x-large */
+h2 + p::first-letter {
+    font-size: x-large;
+}
+
+/* When someone hover over any of your table rows change the background color to a light color of your choice and if the cell has previous color change it also */
+tr:hover {
+    background-color: lightblue;
+}
+
+/* Change the list items display of the navbar to inline */
+nav ul li {
+    display: inline;
+}
+
+/* Change the link of the first nav item to underlined and the others without */
+nav ul li:first-child a {
+    text-decoration: underline;
+}
+
+nav ul li:not(:first-child) a {
+    text-decoration: none;
+}
+
+/* Use nth-child to make all table’s body rows background colors alternating */
+tbody tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tbody tr:nth-child(odd) {
+    background-color: #ffffff;
+}
+
+/* When someone highlights a text in your text, change the highlighting color to a color of your choice */
+::selection {
+    background: yellow;
+}
+
+/* When someone hovers over your webpage body links (not nav) change the cursor to a pointer */
+body a:hover:not(nav a) {
+    cursor: pointer;
+}
+
+/* Change all input fields height to 20px */
+input {
+    height: 20px;
+}
+
+/* Change the border color of all inputs of type text to light gray */
+input[type="text"] {
+    border-color: lightgray;
+}
+
+/* Change input of name message height to 50px */
+input[name="message"] {
+    height: 50px;
+}
