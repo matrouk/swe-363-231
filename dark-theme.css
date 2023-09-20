@@ -6,15 +6,102 @@
     font-family: mySecondFont;
     src: url(CairoPlay-Regular.ttf);
 }
+
+
 html{
     font-family: mySecondFont;
-    background-color: #012727;
-    background-image: url("Animated\ Shape.svg");
-    color: #F1DAC4;
+    background: #FFF;
+    /* background-image: url("Animated\ Shape.svg"); */
+    color: #000000;
 }
 a {
-    color: #F1DAC4;  
+    color: #000000;
 }
 header{
-    font-family: myFirstFont;
+font-family: myFirstFont;
+display: inline-flex;
+align-items: center;
+gap: 233px;
+    
 }
+
+@font-face {
+    font-family: Inter;
+    src: url(Inter-VariableFont_slnt\,wght.ttf);
+}
+
+nav{
+color: #35414B;
+font-family: Inter;
+font-size: 16px;
+font-style: normal;
+font-weight: 400;
+line-height: 16px; /* 100% */
+
+display: flex;
+align-items: center;
+gap: 95px;
+}
+article p:first-child{
+    color: #4E5A65;
+text-align: center;
+font-family: Inter;
+font-size: 64px;
+font-style: normal;
+font-weight: 600;
+line-height: 72px; /* 112.5% */
+}
+article p:nth-child(2){
+    color: #4E5A65;
+    text-align: center;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 150% */}
+
+    img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        
+      }
+
+
+
+    
+     ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+ul li {
+  display: inline;
+  margin-right: 10px; /* Optional: Add some spacing between list items */
+}
+
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+    margin: 0;
+  }
+  
+  main {
+    flex-grow: 1;
+  }
+  
+  footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+  
+      
+
+      
