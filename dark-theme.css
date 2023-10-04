@@ -237,6 +237,34 @@ body {
     margin: 0;
 }
 
+.nav > li > a {
+  padding: 10px 20px !important;
+}
+
+.footer-text {
+  padding: 15px 0;
+}
+
+.centered-image {
+  margin: 30px 0; 
+}
+
+
+.footer {
+  background-color: #f1f1f1; 
+  text-align: center;
+  padding: 10px;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+.content {
+  min-height: 100vh;
+}
+
+
 
 }
       
