@@ -36,7 +36,7 @@ font-family: Inter;
 font-size: 16px;
 font-style: normal;
 font-weight: 400;
-line-height: 16px; /* 100% */
+line-height: 16px; 
 
 display: flex;
 align-items: center;
@@ -49,7 +49,7 @@ font-family: Inter;
 font-size: 64px;
 font-style: normal;
 font-weight: 600;
-line-height: 72px; /* 112.5% */
+line-height: 72px; 
 }
 article p:nth-child(2){
     color: #4E5A65;
@@ -58,7 +58,7 @@ article p:nth-child(2){
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 24px; /* 150% */}
+    line-height: 24px; }
 
     img {
         display: block;
@@ -78,7 +78,7 @@ article p:nth-child(2){
 
 ul li {
   display: inline;
-  margin-right: 10px; /* Optional: Add some spacing between list items */
+  margin-right: 10px; 
 }
 
 
@@ -141,7 +141,7 @@ body {
     opacity: 1;
 }
 
-/* Staggered transition delays*/
+
 .menu-items { transition-delay: 0s; }
 .menu-items a:nth-child(1) { transition-delay: 0.5s; }
 .menu-items a:nth-child(2) { transition-delay: 1s; }
@@ -186,43 +186,59 @@ body {
   }
 }
 
-.sidebar {
-  float: right; 
-  width: 30%;
+@media only screen and (max-width: 600px) {
+  body {
+    width: 100%; 
+    height: auto; 
+    flex-shrink: 0;
+  }
+
+
+
+  html, body {
+    height: auto;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
+  header {
+    padding: 10px; /
+  }
+
+  nav {
+    flex-direction: column; 
+    gap: 15px; 
+  }
+
+  article p:first-child {
+    color: #35414B;
+    text-align: center;
+    font-family: Inter;
+    font-size: 32px; 
+    font-weight: 600;
+    line-height: 40px; 
+  }
+
+  img {
+    width: 384px; 
+    height: 273.288px; 
+    flex-shrink: 0;
+  }
+
+  footer ul {
+    display: flex;
+    flex-direction: row; 
+    align-items: center; 
+    justify-content: space-between; 
+    gap: 16px; 
+    list-style-type: none; 
+    padding: 0; 
+    margin: 0;
 }
 
-.watermark::after {
-  content: "Hussain";
-  position: absolute;
-  bottom: 5px;
-  right: 5px;
-  font-size: 12px;
-  color: rgba(0, 0, 0, 0.5);
-  pointer-events: none;
+
 }
-
-
-.card {
-  max-width: 400px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f7f7f7;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-}
-
-.card-title {
-  margin-bottom: 5px;
-}
-
-.card-date {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-
       
 
       
