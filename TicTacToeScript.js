@@ -32,6 +32,21 @@ function checkWinner() {
     return false;
 }
 
+
+
+document.addEventListener('keydown', function(event) {
+    if (!gameEnded) {
+        // Check if the key pressed is a number key (1-9)
+        if (event.key >= '1' && event.key <= '9') {
+            const cellIndex = parseInt(event.key) - 1;
+            const cell = document.querySelectorAll('.cell')[cellIndex];
+            if (cell.innerText === "") {
+                cellClicked(cell);
+            }
+        }
+    }
+});
+
 function resetGame() {
     gameEnded = false;
     turn = "X";
@@ -40,4 +55,5 @@ function resetGame() {
         cell.innerText = "";
         cell.className = "cell";
     });
+ 
 }
