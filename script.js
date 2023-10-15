@@ -73,3 +73,23 @@ var posts = [
 
 
   window.addEventListener("load", addPostsToContainer);
+
+  function fetchJoke() {
+    fetch('https://official-joke-api.appspot.com/random_joke')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error('Network response was not ok');
+            }
+            return response.json();
+        })
+        .then(data => {
+            const jokeOutputDiv = document.getElementById('jokeOutput');
+            jokeOutputDiv.innerHTML = `
+                <h3>${data.setup}</h3>
+                <p>${data.punchline}</p>
+            `;
+        })
+        .catch(error => {
+            console.error('There was an error fetching the joke:', error);
+        });
+  }
