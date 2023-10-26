@@ -52,47 +52,54 @@ const posts = [
 const addPostsToContainer = () => {
     const postContainer = document.getElementById("postContainer");
 
-    posts.forEach(post => {
-        const createPostElement = () => {
-            const postElement = document.createElement("div");
-            postElement.classList.add("post");
+    const createPostElement = (post) => {
+        const postElement = document.createElement("div");
+        postElement.classList.add("post");
 
-            const addTitle = () => {
-                const postTitle = document.createElement("h2");
-                postTitle.textContent = post.title;
-                postElement.appendChild(postTitle);
-            };
-
-            const addImage = () => {
-                const postImage = document.createElement("img");
-                postImage.src = post.src;
-                postImage.alt = post.title;
-                postElement.appendChild(postImage);
-            };
-
-            const addBrief = () => {
-                const postBrief = document.createElement("p");
-                postBrief.textContent = post.brief;
-                postElement.appendChild(postBrief);
-            };
-
-            const addLink = () => {
-                const postLink = document.createElement("a");
-                postLink.href = post.link;
-                postLink.textContent = "Read More";
-                postElement.appendChild(postLink);
-            };
-
-            addTitle();
-            addImage();
-            addBrief();
-            addLink();
-
-            return postElement;
+        const addTitle = () => {
+            const postTitle = document.createElement("h2");
+            postTitle.textContent = post.title;
+            postElement.appendChild(postTitle);
         };
 
-        postContainer.appendChild(createPostElement());
-    });
+        const addImage = () => {
+            const postImage = document.createElement("img");
+            postImage.src = post.src;
+            postImage.alt = post.title;
+            postElement.appendChild(postImage);
+        };
+
+        const addBrief = () => {
+            const postBrief = document.createElement("p");
+            postBrief.textContent = post.brief;
+            postElement.appendChild(postBrief);
+        };
+
+        const addLink = () => {
+            const postLink = document.createElement("a");
+            postLink.href = post.link;
+            postLink.textContent = "Read More";
+            postElement.appendChild(postLink);
+        };
+
+        addTitle();
+        addImage();
+        addBrief();
+        addLink();
+
+        return postElement;
+    };
+
+    // Use map to create an array of post elements
+    const postElements = posts.map(createPostElement);
+
+    // Use reduce to append post elements to the post container
+    const appendPostElements = (container, element) => {
+        container.appendChild(element);
+        return container;
+    };
+
+    postElements.reduce(appendPostElements, postContainer);
 };
 
 // Using IIFE (Immediately Invoked Function Expression) for event listeners
