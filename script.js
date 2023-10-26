@@ -1,5 +1,5 @@
 // Define the Post class
-class Post {
+const Post = class {
     constructor(src, title, brief, link, tags) {
         this.src = src;
         this.title = title;
@@ -7,10 +7,10 @@ class Post {
         this.link = link;
         this.tags = tags;
     }
-}
+};
 
 
-var posts = [
+const posts = [
     new Post(
         "https://media.kingston.com/kingston/opengraph/ktc-opengraph-solutions-gaming-time-to-upgrade-your-pc-build.png",
         "Choosing the Right CPU for Your PC Build",
@@ -49,42 +49,58 @@ var posts = [
    
 ];
 
-function addPostsToContainer() {
-    var postContainer = document.getElementById("postContainer");
+const addPostsToContainer = () => {
+    const postContainer = document.getElementById("postContainer");
 
-    posts.forEach(function (post) {
-        var postElement = document.createElement("div");
-        postElement.classList.add("post");
+    posts.forEach(post => {
+        const createPostElement = () => {
+            const postElement = document.createElement("div");
+            postElement.classList.add("post");
 
-        var postTitle = document.createElement("h2");
-        postTitle.textContent = post.title;
+            const addTitle = () => {
+                const postTitle = document.createElement("h2");
+                postTitle.textContent = post.title;
+                postElement.appendChild(postTitle);
+            };
 
-        var postImage = document.createElement("img");
-        postImage.src = post.src;
-        postImage.alt = post.title;
+            const addImage = () => {
+                const postImage = document.createElement("img");
+                postImage.src = post.src;
+                postImage.alt = post.title;
+                postElement.appendChild(postImage);
+            };
 
-        var postBrief = document.createElement("p");
-        postBrief.textContent = post.brief;
+            const addBrief = () => {
+                const postBrief = document.createElement("p");
+                postBrief.textContent = post.brief;
+                postElement.appendChild(postBrief);
+            };
 
-        var postLink = document.createElement("a");
-        postLink.href = post.link;
-        postLink.textContent = "Read More";
+            const addLink = () => {
+                const postLink = document.createElement("a");
+                postLink.href = post.link;
+                postLink.textContent = "Read More";
+                postElement.appendChild(postLink);
+            };
 
-        // Append the elements to the post container
-        postElement.appendChild(postTitle);
-        postElement.appendChild(postImage);
-        postElement.appendChild(postBrief);
-        postElement.appendChild(postLink);
+            addTitle();
+            addImage();
+            addBrief();
+            addLink();
 
-        postContainer.appendChild(postElement);
+            return postElement;
+        };
+
+        postContainer.appendChild(createPostElement());
     });
-}
+};
 
-// Event listener to run the addPostsToContainer function on page load
-window.addEventListener("load", addPostsToContainer);
+// Using IIFE (Immediately Invoked Function Expression) for event listeners
+(function () {
+    window.addEventListener("load", addPostsToContainer);
+})();
 
-// Function to fetch a joke
-function fetchJoke() {
+const fetchJoke = () => {
     fetch('https://official-joke-api.appspot.com/random_joke')
         .then(response => {
             if (!response.ok) {
@@ -102,4 +118,4 @@ function fetchJoke() {
         .catch(error => {
             console.error('There was an error fetching the joke:', error);
         });
-}
+};
