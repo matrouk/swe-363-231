@@ -14,4 +14,13 @@ router.get('/compare', (req, res) => {
   res.sendFile(path.join(__dirname, '..', 'public', 'compare.html'));
 });
 
+router.get('/advTable', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'advTable.html'));
+});
+
+router.get('/interact', (req, res) => {
+  res.sendFile(path.join(__dirname, '..', 'public', 'interact.html'));
+});
+
+
 module.exports = router;
