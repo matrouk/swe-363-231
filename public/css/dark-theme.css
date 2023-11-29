@@ -1,10 +1,10 @@
 @font-face {
     font-family: myFirstFont;
-    src: url(CairoPlay-VariableFont_slnt\,wght.ttf);
+    src: url(../fonts/CairoPlay-VariableFont_slnt\,wght.ttf);
 }
 @font-face {
     font-family: mySecondFont;
-    src: url(CairoPlay-Regular.ttf);
+    src: url(../fonts/CairoPlay-Regular.ttf);
 }
 
 
@@ -27,7 +27,7 @@ gap: 233px;
 
 @font-face {
     font-family: Inter;
-    src: url(Inter-VariableFont_slnt\,wght.ttf);
+    src: url(../fonts/Inter-VariableFont_slnt\,wght.ttf);
 }
 
 nav{
